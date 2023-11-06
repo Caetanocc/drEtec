@@ -1,0 +1,39 @@
+{
+ "users": [
+  {
+   "name": "Enzo Mateus",
+   "dataNasc": "2005-08-17",
+   "relation": "Tio(a)",
+   "points": 9,
+   "id": 1
+  },
+  {
+   "name": "Luccas",
+   "dataNasc": "2005-01-17",
+   "relation": "Irmã(o)",
+   "points": 9,
+   "id": 2
+  },
+  {
+   "name": "Murilo",
+   "dataNasc": "2002-02-17",
+   "relation": "Tio(a)",
+   "points": 9,
+   "id": 3
+  },
+  {
+   "name": "Ulisses",
+   "dataNasc": "1998-03-29",
+   "relation": "Amigo(a)",
+   "points": 9,
+   "id": 4
+  },
+  {
+   "name": "Rodrigo",
+   "dataNasc": "2005-06-06",
+   "relation": "Filho(a)",
+   "points": 9,
+   "id": 5
+  }
+ ]
+}

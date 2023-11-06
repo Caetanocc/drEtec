@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DR AE</title>
+  <link rel="stylesheet" href="../style.css" />
+
+  <script
+   src="https://kit.fontawesome.com/309e31f583.js"
+   crossorigin="anonymous"
+  ></script>
+  <script src="../js/initializeFirebase.js" type="module"></script>
+  <script src="../js/list.js" type="module"></script>
+ </head>
+ <body>
+  <header>
+   <div>
+    <h1>DR AE</h1>
+    <a href="#" id="logout">Sair da conta</a>
+   </div>
+  </header>
+  <main>
+   <h3>Lista de Pessoas</h3>
+   <table>
+    <tr class="table-header">
+     <th>Nome</th>
+     <th>Data Nasc</th>
+     <th>Relacionamento</th>
+     <th>Pontos</th>
+     <th>Editar</th>
+     <th>Excluir</th>
+    </tr>
+   </table>
+   <button class="activeAddUserModal">Adicionar uma pessoa</button>
+  </main>
+  <div class="modal addUserModal">
+   <form>
+    <div class="form-item">
+     <label for="username">Nome</label>
+     <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="Digite o seu nome"
+     />
+    </div>
+    <div class="form-item">
+     <label for="date">Data de nascimento</label>
+     <input type="date" name="date" id="date" maxlength="8" />
+    </div>
+    <div class="form-item">
+     <label for="rel">Relacionamento</label>
+     <select name="rel" id="relation">
+      <option value="Tio(a)">Tio(a)</option>
+      <option value="Companheiro(a)">Companheiro(a)</option>
+      <option value="Outro">Outro</option>
+      <option value="Irmã(o)">Irmã(o)</option>
+      <option value="Amigo(a)">Amigo(a)</option>
+      <option value="Filho(a)">Filho(a)</option>
+      <option value="Professor(a)">Professor(a)</option>
+     </select>
+    </div>
+    <div class="form-item">
+     <label for="behaviour">Comportamento</label>
+     <input
+      type="range"
+      name="behaviour"
+      id="behaviour"
+      class="user-point"
+      min="0"
+      max="10"
+      step="1"
+     />
+    </div>
+    <div class="form-item">
+     <label for="attitude">Atitude</label>
+     <input
+      type="range"
+      name="attitude"
+      id="attitude"
+      class="user-point"
+      min="0"
+      max="10"
+      step="1"
+     />
+    </div>
+    <div class="form-item">
+     <label for="voice">Tom de voz</label>
+     <input
+      type="range"
+      name="voice"
+      id="voice"
+      class="user-point"
+      min="0"
+      max="10"
+      step="1"
+     />
+    </div>
+    <input type="submit" value="Criar" id="createUser" class="modal-btn" />
+    <input
+     type="button"
+     value="Cancelar"
+     id="closeAddUserModal"
+     class="modal-btn"
+    />
+   </form>
+  </div>
+  <div class="modal editUserModal">
+   <form id="">
+    <div class="form-item">
+     <label for="username">Nome</label>
+     <input
+      type="text"
+      name="username"
+      id="user-username"
+      placeholder="Digite o seu nome"
+     />
+    </div>
+    <div class="form-item">
+     <label for="date">Data de nascimento</label>
+     <input type="date" name="date" id="user-date" />
+    </div>
+    <div class="form-item">
+     <label for="rel">Relacionamento</label>
+     <select name="rel" id="user-relation">
+      <option value="Tio(a)">Tio(a)</option>
+      <option value="Companheiro(a)">Companheiro(a)</option>
+      <option value="Outro">Outro</option>
+      <option value="Irmã(o)">Irmã(o)</option>
+      <option value="Amigo(a)">Amigo(a)</option>
+      <option value="Filho(a)">Filho(a)</option>
+      <option value="Professor(a)">Professor(a)</option>
+     </select>
+    </div>
+    <div class="form-item">
+     <label for="behaviour">Comportamento</label>
+     <input
+      type="range"
+      name="behaviour"
+      id="user-behaviour"
+      class="user-point"
+      min="0"
+      max="10"
+      step="1"
+     />
+    </div>
+    <div class="form-item">
+     <label for="attitude">Atitude</label>
+     <input
+      type="range"
+      name="attitude"
+      id="user-attitude"
+      class="user-point"
+      min="0"
+      max="10"
+      step="1"
+     />
+    </div>
+    <div class="form-item">
+     <label for="voice">Tom de voz</label>
+     <input
+      type="range"
+      name="voice"
+      id="user-voice"
+      class="user-point"
+      min="0"
+      max="10"
+      step="1"
+     />
+    </div>
+    <input type="submit" value="Editar" id="editUser" class="modal-btn" />
+    <input
+     type="button"
+     value="Cancelar"
+     id="closeEditUserModal"
+     class="modal-btn"
+    />
+   </form>
+  </div>
+ </body>
+</html>
