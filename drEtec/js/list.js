@@ -27,6 +27,8 @@ onAuthStateChanged(auth, (user) => {
   // Caso tenha um usuário, pego o id dele e busco os dados no realtime database do firebase
   userUid = user.uid
 
+  getUserPhp(userUid)
+
   const db = getDatabase()
   const userRef = ref(db, "users/" + user.uid)
 
@@ -42,6 +44,43 @@ onAuthStateChanged(auth, (user) => {
   window.location.pathname = "/"
  }
 })
+
+function getUserPhp(uid) {
+  // URL da sua página PHP e parâmetros GET
+  const url = '/drEtec/drEtec/upload/getuser.php';
+  const parametros = `userid=${uid}`;
+
+  // Construir a URL com os parâmetros
+  const urlComParametros = `${url}?${parametros}`;
+
+  // Criar uma nova instância de XMLHttpRequest
+  const xhr = new XMLHttpRequest();
+
+  // Configurar a requisição
+  xhr.open('GET', urlComParametros, true);
+
+  // Definir o que fazer com a resposta
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        // Manipular os dados da resposta (se necessário)
+        console.log(xhr.responseText);
+
+        alert(xhr.responseText);
+
+        const perfil = document.querySelector("#perfil")
+        perfil.innerHTML = `Perfil   ${xhr.responseText}`
+
+      } else {
+        console.error('Erro na requisição:', xhr.statusText);
+      }
+    }
+  };
+
+  // Enviar a requisição
+  xhr.send();
+}
+
 
 const activeAddUserModal_btn = document.querySelector(".activeAddUserModal")
 const addUserModal = document.querySelector(".addUserModal")
